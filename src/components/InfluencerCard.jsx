@@ -10,11 +10,11 @@ export default function InfluencerCard() {
     followers: "248K",
     engagement: "6.9%",
     location: "Chennai, India",
-    email: "hello@creativectti.com",
+    email: "hello@creativeatti.com",
     phone: "+91 82200 88524",
     bio: "Creating powerful brand stories, digital campaigns, and engaging content for modern audiences.",
     about:
-      "Creative Ctti is focused on visual storytelling, influencer branding, and creative media solutions. We build content that is bold, memorable, and mobile-first.",
+      "Creative Atti is focused on visual storytelling, influencer branding, and creative media solutions. We build content that is bold, memorable, and mobile-first.",
     highlights: ["Branding", "Creative Media", "Influencer Content"],
     stats: [
       { label: "Followers", value: "192" },
@@ -82,7 +82,7 @@ export default function InfluencerCard() {
           <div className="w-28 h-28 rounded-full bg-[#e67806] border-4 border-white shadow-lg flex items-center justify-center overflow-hidden">
             <img
               src="/logo.jpg"
-              alt="Creative Ctti Logo"
+              alt="Creative Atti Logo"
               className="w-full h-full object-cover rounded-full"
             />
           </div>
