@@ -27,10 +27,7 @@ export default function InfluencerCard() {
         value: "@creative_atti",
         url: "https://www.instagram.com/creative_atti?igsh=eWNteXNwbGc5dWw2",
       },
-      {
-        label: "Phone",
-        value: "8220088524",
-      },
+
       {
         label: "WhatsApp",
         value: "+91 82200 88524",
@@ -117,56 +114,55 @@ export default function InfluencerCard() {
 
         {/* Work Videos Slider */}
         <div className="relative">
-  <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
-    
-    {/* LEFT ARROW */}
-    <button
-      onClick={prevVideo}
-      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
-    >
-      ‹
-    </button>
+          <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
 
-    {/* VIDEO */}
-    <video
-      key={profile.videos[currentVideo].src}
-      controls
-      className="w-full h-full object-cover"
-    >
-      <source
-        src={profile.videos[currentVideo].src}
-        type="video/mp4"
-      />
-      Your browser does not support the video tag.
-    </video>
+            {/* LEFT ARROW */}
+            <button
+              onClick={prevVideo}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
+            >
+              ‹
+            </button>
 
-    {/* RIGHT ARROW */}
-    <button
-      onClick={nextVideo}
-      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
-    >
-      ›
-    </button>
+            {/* VIDEO */}
+            <video
+              key={profile.videos[currentVideo].src}
+              controls
+              className="w-full h-full object-cover"
+            >
+              <source
+                src={profile.videos[currentVideo].src}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
 
-  </div>
+            {/* RIGHT ARROW */}
+            <button
+              onClick={nextVideo}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
+            >
+              ›
+            </button>
 
-  <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
-    {profile.videos[currentVideo].title}
-  </p>
+          </div>
 
-  {/* DOTS */}
-  <div className="flex justify-center gap-2 mt-3">
-    {profile.videos.map((_, index) => (
-      <button
-        key={index}
-        onClick={() => setCurrentVideo(index)}
-        className={`w-2.5 h-2.5 rounded-full ${
-          currentVideo === index ? "bg-[#d94b1a]" : "bg-[#f2c38b]"
-        }`}
-      />
-    ))}
-  </div>
-</div>
+          <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
+            {profile.videos[currentVideo].title}
+          </p>
+
+          {/* DOTS */}
+          <div className="flex justify-center gap-2 mt-3">
+            {profile.videos.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentVideo(index)}
+                className={`w-2.5 h-2.5 rounded-full ${currentVideo === index ? "bg-[#d94b1a]" : "bg-[#f2c38b]"
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Bio */}
         <p className="text-sm text-[#5a3a2c] mt-4 leading-6">{profile.bio}</p>
@@ -286,7 +282,7 @@ export default function InfluencerCard() {
         {/* Buttons */}
         <div className="mt-5 flex gap-3">
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/918220088524"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 rounded-2xl bg-[#d94b1a] text-white font-semibold py-3 shadow-md hover:opacity-95 transition text-center"
