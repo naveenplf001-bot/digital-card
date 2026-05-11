@@ -18,7 +18,7 @@ export default function InfluencerCard() {
     highlights: ["Branding", "Creative Media", "Influencer Content"],
     stats: [
       { label: "Followers", value: "192" },
-      { label: "Avg Reach", value: "100K" },
+      { label: "Client", value: "50+" },
       { label: "Collabs", value: "120+" },
     ],
     links: [
@@ -96,7 +96,7 @@ export default function InfluencerCard() {
         {/* About */}
         <div className="mt-5 rounded-2xl bg-white border border-[#f2c38b] p-4 text-left shadow-sm">
 
-          <h2 className="text-sm font-bold text-[#2b1a12] mb-3">About</h2>
+          <h2 className="text-sm font-bold text-[#2b1a12] mb-3">Creator</h2>
           {/* Bio */}
           <p className="text-sm text-[#5a3a2c] mt-4 leading-6">{profile.bio}</p>
           <div className="flex items-start gap-3">
@@ -116,7 +116,7 @@ export default function InfluencerCard() {
         {/* Skills & Experience */}
         <div className="mt-5 rounded-2xl bg-white border border-[#f2c38b] p-4 text-left shadow-sm">
           <h2 className="text-sm font-bold text-[#2b1a12] mb-3">
-            What I Do
+            Services
           </h2>
 
           <ul className="space-y-3 text-sm text-[#5a3a2c] leading-6">
@@ -230,8 +230,6 @@ export default function InfluencerCard() {
             </div>
           </div>
         </div>
-
-
 
         {/* Highlights */}
         <div className="flex flex-wrap justify-center gap-2 mt-4">
