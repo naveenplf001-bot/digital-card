@@ -12,9 +12,9 @@ export default function InfluencerCard() {
     location: "Chennai, India",
     email: "hello@creativeatti.com",
     phone: "+91 82200 88524",
-    bio: "Creating powerful brand stories, digital campaigns, and engaging content for modern audiences.",
+    bio: "This is Bharani Dharan — your one-stop solution for all digital needs.",
     about:
-      "Creative Atti is focused on visual storytelling, influencer branding, and creative media solutions. We build content that is bold, memorable, and mobile-first.",
+      "Creating content from text to visuals is my Daily meal. From ideation to promotion, I handle the complete creative process with expertise and dedication.",
     highlights: ["Branding", "Creative Media", "Influencer Content"],
     stats: [
       { label: "Followers", value: "192" },
@@ -95,8 +95,10 @@ export default function InfluencerCard() {
 
         {/* About */}
         <div className="mt-5 rounded-2xl bg-white border border-[#f2c38b] p-4 text-left shadow-sm">
-          <h2 className="text-sm font-bold text-[#2b1a12] mb-3">About</h2>
 
+          <h2 className="text-sm font-bold text-[#2b1a12] mb-3">About</h2>
+          {/* Bio */}
+          <p className="text-sm text-[#5a3a2c] mt-4 leading-6">{profile.bio}</p>
           <div className="flex items-start gap-3">
             <div className="w-14 h-14 rounded-full bg-[#e67806] flex items-center justify-center overflow-hidden border border-[#d94b1a] shrink-0">
               <img
@@ -111,61 +113,125 @@ export default function InfluencerCard() {
             </p>
           </div>
         </div>
+        {/* Skills & Experience */}
+        <div className="mt-5 rounded-2xl bg-white border border-[#f2c38b] p-4 text-left shadow-sm">
+          <h2 className="text-sm font-bold text-[#2b1a12] mb-3">
+            What I Do
+          </h2>
 
-        {/* Work Videos Slider */}
-        <div className="relative">
-          <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
+          <ul className="space-y-3 text-sm text-[#5a3a2c] leading-6">
+            <li>
+              <span className="font-semibold text-[#d94b1a]">• I Write – </span>
+              Worked as a writer for a TV show on Sun Network for over 4 years.
+            </li>
 
-            {/* LEFT ARROW */}
-            <button
-              onClick={prevVideo}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
-            >
-              ‹
-            </button>
+            <li>
+              <span className="font-semibold text-[#d94b1a]">• I Direct – </span>
+              Currently working as an Assistant Director in a feature film project.
+            </li>
 
-            {/* VIDEO */}
-            <video
-              key={profile.videos[currentVideo].src}
-              controls
-              className="w-full h-full object-cover"
-            >
-              <source
-                src={profile.videos[currentVideo].src}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+            <li>
+              <span className="font-semibold text-[#d94b1a]">• I Shoot – </span>
+              Equipped with professional Sony camera gear and experienced in creating
+              stunning visual content.
+            </li>
 
-            {/* RIGHT ARROW */}
-            <button
-              onClick={nextVideo}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
-            >
-              ›
-            </button>
+            <li>
+              <span className="font-semibold text-[#d94b1a]">• I Edit – </span>
+              Skilled in industry-standard tools like Adobe Photoshop, Premiere Pro,
+              After Effects, and DaVinci Resolve to craft high-quality content.
+            </li>
 
-          </div>
+            <li>
+              <span className="font-semibold text-[#d94b1a]">• I Upload – </span>
+              Experienced in content uploading, audience engagement, and understanding
+              social media algorithms.
+            </li>
 
-          <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
-            {profile.videos[currentVideo].title}
+            <li>
+              <span className="font-semibold text-[#d94b1a]">• I Promote – </span>
+              Worked on multiple brand and movie promotions under the team
+              <a
+                href="https://www.instagram.com/thebrandmax?igsh=MXB5aWRhYmxjYmVueg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#d94b1a] hover:underline"
+              >
+                @thebrandmax
+              </a>
+            </li>
+          </ul>
+
+          <p className="mt-4 text-sm text-[#6b4a3a] leading-6 border-t border-[#f2c38b] pt-4">
+            From scripting to screen, and from creation to promotion — I provide
+            complete digital and creative solutions under one roof.
           </p>
+        </div>
 
-          {/* DOTS */}
-          <div className="flex justify-center gap-2 mt-3">
-            {profile.videos.map((_, index) => (
+        {/* Our Works Section */}
+        <div className="mt-5">
+
+          {/* Section Title */}
+          <h2 className="text-sm font-bold text-[#2b1a12] mb-3 text-left">
+            Our Works
+          </h2>
+
+          <div className="relative">
+            <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
+
+              {/* LEFT ARROW */}
               <button
-                key={index}
-                onClick={() => setCurrentVideo(index)}
-                className={`w-2.5 h-2.5 rounded-full ${currentVideo === index ? "bg-[#d94b1a]" : "bg-[#f2c38b]"
-                  }`}
-              />
-            ))}
+                onClick={prevVideo}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
+              >
+                ‹
+              </button>
+
+              {/* VIDEO */}
+              <video
+                key={profile.videos[currentVideo].src}
+                controls
+                className="w-full h-full object-cover"
+              >
+                <source
+                  src={profile.videos[currentVideo].src}
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+
+              {/* RIGHT ARROW */}
+              <button
+                onClick={nextVideo}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
+              >
+                ›
+              </button>
+
+            </div>
+
+            {/* Video Title */}
+            <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
+              {profile.videos[currentVideo].title}
+            </p>
+
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-3">
+              {profile.videos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentVideo(index)}
+                  className={`w-2.5 h-2.5 rounded-full ${currentVideo === index
+                    ? "bg-[#d94b1a]"
+                    : "bg-[#f2c38b]"
+                    }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Bio */}
-        <p className="text-sm text-[#5a3a2c] mt-4 leading-6">{profile.bio}</p>
+
 
         {/* Highlights */}
         <div className="flex flex-wrap justify-center gap-2 mt-4">
@@ -301,7 +367,7 @@ export default function InfluencerCard() {
         </div>
 
         <p className="text-[11px] text-[#8a6a58] mt-4">
-          Where creativity meets strategy to deliver powerful content
+          One call can clear all your doubts!
         </p>
       </div>
     </div>
