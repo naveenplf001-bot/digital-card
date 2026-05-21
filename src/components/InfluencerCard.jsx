@@ -3,9 +3,7 @@ import { useState } from "react";
 export default function InfluencerCard() {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(0);
-  // const [activeTab, setActiveTab] = useState("videos");
-  const [selectedMedia, setSelectedMedia] = useState(null);
-  const [activeTab, setActiveTab] = useState(null);
+  const [activeTab, setActiveTab] = useState("videos");
 
   const profile = {
     name: "Creative atti",
@@ -187,185 +185,158 @@ export default function InfluencerCard() {
         </div>
 
         {/* Our Works Section */}
-        <div className="mt-5">
+<div className="mt-5">
 
-          {/* Section Title */}
-          <h2 className="text-sm font-bold text-[#2b1a12] mb-3 text-left">
-            Our Works
-          </h2>
+  {/* Section Title */}
+  <h2 className="text-sm font-bold text-[#2b1a12] mb-3 text-left">
+    Our Works
+  </h2>
 
-          {/* Tabs */}
-          {/* Tabs */}
-          <div className="flex gap-2 mb-4">
-            <button
-              onClick={() => setActiveTab("videos")}
-              className={`flex-1 py-2 rounded-xl text-sm font-semibold transition ${activeTab === "videos"
-                  ? "bg-[#d94b1a] text-white"
-                  : "bg-white border border-[#f2c38b] text-[#5a3a2c]"
-                }`}
-            >
-              Videos
-            </button>
+  {/* Tabs */}
+  <div className="flex gap-2 mb-4">
+    <button
+      onClick={() => setActiveTab("videos")}
+      className={`flex-1 py-2 rounded-xl text-sm font-semibold transition ${
+        activeTab === "videos"
+          ? "bg-[#d94b1a] text-white"
+          : "bg-white border border-[#f2c38b] text-[#5a3a2c]"
+      }`}
+    >
+      Videos
+    </button>
 
-            <button
-              onClick={() => setActiveTab("photos")}
-              className={`flex-1 py-2 rounded-xl text-sm font-semibold transition ${activeTab === "photos"
-                  ? "bg-[#d94b1a] text-white"
-                  : "bg-white border border-[#f2c38b] text-[#5a3a2c]"
-                }`}
-            >
-              Photos
-            </button>
-          </div>
+    <button
+      onClick={() => setActiveTab("photos")}
+      className={`flex-1 py-2 rounded-xl text-sm font-semibold transition ${
+        activeTab === "photos"
+          ? "bg-[#d94b1a] text-white"
+          : "bg-white border border-[#f2c38b] text-[#5a3a2c]"
+      }`}
+    >
+      Photos
+    </button>
+  </div>
 
-          {/* VIDEOS */}
-          {activeTab === "videos" && (
-            <div className="relative">
+  {/* VIDEOS */}
+  {activeTab === "videos" && (
+    <div className="relative">
 
-              <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
+      <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
 
-                {/* LEFT ARROW */}
-                <button
-                  onClick={prevVideo}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
-                >
-                  ‹
-                </button>
+        {/* LEFT ARROW */}
+        <button
+          onClick={prevVideo}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
+        >
+          ‹
+        </button>
 
-                {/* VIDEO */}
-                <video
-                  key={profile.videos[currentVideo].src}
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  <source
-                    src={profile.videos[currentVideo].src}
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+        {/* VIDEO */}
+        <video
+          key={profile.videos[currentVideo].src}
+          controls
+          className="w-full h-full object-cover"
+        >
+          <source
+            src={profile.videos[currentVideo].src}
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
 
-                {/* RIGHT ARROW */}
-                <button
-                  onClick={nextVideo}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
-                >
-                  ›
-                </button>
+        {/* RIGHT ARROW */}
+        <button
+          onClick={nextVideo}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
+        >
+          ›
+        </button>
 
-              </div>
+      </div>
 
-              {/* Video Title */}
-              <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
-                {profile.videos[currentVideo].title}
-              </p>
+      {/* Video Title */}
+      <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
+        {profile.videos[currentVideo].title}
+      </p>
 
-              {/* Dots */}
-              <div className="flex justify-center gap-2 mt-3">
-                {profile.videos.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentVideo(index)}
-                    className={`w-2.5 h-2.5 rounded-full ${currentVideo === index
-                        ? "bg-[#d94b1a]"
-                        : "bg-[#f2c38b]"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-3">
+        {profile.videos.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentVideo(index)}
+            className={`w-2.5 h-2.5 rounded-full ${
+              currentVideo === index
+                ? "bg-[#d94b1a]"
+                : "bg-[#f2c38b]"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )}
 
-          {/* PHOTOS */}
-          {activeTab === "photos" && (
-            <div className="relative">
+  {/* PHOTOS */}
+{activeTab === "photos" && (
+  <div className="relative">
 
-              <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
+    <div className="w-full aspect-[9/16] max-h-[500px] mx-auto overflow-hidden rounded-2xl bg-black relative">
 
-                {/* LEFT ARROW */}
-                <button
-                  onClick={() =>
-                    setCurrentPhoto((prev) =>
-                      prev === 0 ? profile.photos.length - 1 : prev - 1
-                    )
-                  }
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
-                >
-                  ‹
-                </button>
+      {/* LEFT ARROW */}
+      <button
+        onClick={() =>
+          setCurrentPhoto((prev) =>
+            prev === 0 ? profile.photos.length - 1 : prev - 1
+          )
+        }
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
+      >
+        ‹
+      </button>
 
-                {/* PHOTO */}
-                <img
-                  src={profile.photos[currentPhoto]}
-                  alt={`Photo ${currentPhoto + 1}`}
-                  className="w-full h-full object-cover"
-                />
+      {/* PHOTO */}
+      <img
+        src={profile.photos[currentPhoto]}
+        alt={`Work ${currentPhoto + 1}`}
+        className="w-full h-full object-cover"
+      />
 
-                {/* RIGHT ARROW */}
-                <button
-                  onClick={() =>
-                    setCurrentPhoto(
-                      (prev) => (prev + 1) % profile.photos.length
-                    )
-                  }
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
-                >
-                  ›
-                </button>
+      {/* RIGHT ARROW */}
+      <button
+        onClick={() =>
+          setCurrentPhoto(
+            (prev) => (prev + 1) % profile.photos.length
+          )
+        }
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm z-10"
+      >
+        ›
+      </button>
 
-              </div>
+    </div>
 
-              {/* Photo Title */}
-              <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
-                Photo {currentPhoto + 1}
-              </p>
+    {/* Photo Title */}
+    <p className="text-sm font-medium text-[#2b1a12] mt-3 text-center">
+      Photo {currentPhoto + 1}
+    </p>
 
-              {/* Dots */}
-              <div className="flex justify-center gap-2 mt-3">
-                {profile.photos.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentPhoto(index)}
-                    className={`w-2.5 h-2.5 rounded-full ${currentPhoto === index
-                        ? "bg-[#d94b1a]"
-                        : "bg-[#f2c38b]"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-        {/* POPUP MODAL */}
-        {selectedMedia && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedMedia(null)}
-              className="absolute top-5 right-5 text-white text-3xl"
-            >
-              ✕
-            </button>
-
-            {/* VIDEO */}
-            {selectedMedia.type === "video" ? (
-              <video
-                src={selectedMedia.src}
-                controls
-                autoPlay
-                className="max-w-full max-h-[90vh] rounded-2xl"
-              />
-            ) : (
-              /* IMAGE */
-              <img
-                src={selectedMedia.src}
-                alt="Preview"
-                className="max-w-full max-h-[90vh] rounded-2xl"
-              />
-            )}
-          </div>
-        )}
+    {/* Dots */}
+    <div className="flex justify-center gap-2 mt-3">
+      {profile.photos.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentPhoto(index)}
+          className={`w-2.5 h-2.5 rounded-full ${
+            currentPhoto === index
+              ? "bg-[#d94b1a]"
+              : "bg-[#f2c38b]"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+)}
+</div>
 
         {/* Highlights */}
         <div className="flex flex-wrap justify-center gap-2 mt-4">
