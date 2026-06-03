@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function InfluencerCard() {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(0);
-  const [activeTab, setActiveTab] = useState("videos");
+  const [activeTab, setActiveTab] = useState("photos");
 
   const profile = {
     name: "Creative atti",
@@ -194,16 +194,7 @@ export default function InfluencerCard() {
 
   {/* Tabs */}
   <div className="flex gap-2 mb-4">
-    <button
-      onClick={() => setActiveTab("videos")}
-      className={`flex-1 py-2 rounded-xl text-sm font-semibold transition ${
-        activeTab === "videos"
-          ? "bg-[#d94b1a] text-white"
-          : "bg-white border border-[#f2c38b] text-[#5a3a2c]"
-      }`}
-    >
-      Videos
-    </button>
+    
 
     <button
       onClick={() => setActiveTab("photos")}
@@ -214,6 +205,16 @@ export default function InfluencerCard() {
       }`}
     >
       Photos
+    </button>
+    <button
+      onClick={() => setActiveTab("videos")}
+      className={`flex-1 py-2 rounded-xl text-sm font-semibold transition ${
+        activeTab === "videos"
+          ? "bg-[#d94b1a] text-white"
+          : "bg-white border border-[#f2c38b] text-[#5a3a2c]"
+      }`}
+    >
+      Videos
     </button>
   </div>
 
