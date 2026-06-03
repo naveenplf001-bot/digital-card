@@ -12,14 +12,14 @@ export default function InfluencerCard() {
     followers: "248K",
     engagement: "6.9%",
     location: "Chennai, India",
-    email: "hello@creativeatti.com",
+    email: "bharani.m002@gmail.com",
     phone: "+91 82200 88524",
     bio: "This is Bharani Dharan — your one-stop solution for all digital needs.",
     about:
       "Creating content from text to visuals is my Daily meal. From ideation to promotion, I handle the complete creative process with expertise and dedication.",
     highlights: ["Branding", "Creative Media", "Influencer Content"],
     stats: [
-      { label: "Followers", value: "192" },
+      { label: "Experience", value: "5+" },
       { label: "Client", value: "50+" },
       { label: "Collabs", value: "120+" },
     ],
